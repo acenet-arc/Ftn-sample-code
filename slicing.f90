@@ -14,7 +14,7 @@ program slice_example
     print *, 'Part of row 4:'
     print *, b2d( 4, 3:9)
     print *, 'Part of column 4:'
-    print *, b2d( 6:9, 4)
+    print *, b2d( 6:, 4)
     print *, 'A 3x3 square from the interior:'
     print *, b2d( 6:8, 6:8)
 end program
