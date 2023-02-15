@@ -7,7 +7,7 @@ integer :: i, j
 
 b = reshape( a, (/3, 3/) )
 
-do i = lbound(b,1), ubound(b,1)
-   write(*,*) (b(i,j), j=lbound(b,2),ubound(b,2))
+do i = 1,3
+   write(*,*) (b(i,j), j=1,3)
 end do
 end program
