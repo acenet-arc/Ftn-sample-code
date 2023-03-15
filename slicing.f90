@@ -1,10 +1,12 @@
+! Demonstrate slicing notation
+! also called 'sections'
 program slice_example
     implicit none
     integer :: b2d(9,10)
     integer :: i,j
 
-    do i=1, 9
-        do j=1, 10
+    do j=1, 10
+        do i=1, 9
             b2d (i,j) = 10*i+(j-1)
         end do
     end do
