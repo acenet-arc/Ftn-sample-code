@@ -1,0 +1,12 @@
+&grid
+totpoints=1000
+xleft=-12.
+xright=12.
+nsteps=100000
+printsteps=1000
+kappa=1.
+/
+&physics
+a0=1.
+sigma0=1.
+/
