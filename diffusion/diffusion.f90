@@ -75,10 +75,10 @@
 !
 ! Update solution
 !
-           forall (i=2:totpoints+1)
+           do concurrent (i=2:totpoints+1)
                new(i) = old(i) + dt*kappa/(dx**2) * &
                          (old(i+1) - 2*old(i) + old(i-1))
-           end forall
+           end do
            time = time + dt
 ! 
 ! Update analytical (correct) solution
