@@ -99,14 +99,23 @@
 !
 ! Dump final temperature profile to a file for plotting
 !
-       open(11,file="final_temperature.csv")
-       write(11,*) 'x,temperature'
-       do i=1, totpoints+2
-           write(11,*) x(i),',',new(i)
-       end do
-       close(11)
-
+       call temperature2csv(x,new,totpoints+2,"final_temperature.csv")
        deallocate(temperature)
        deallocate(theory)
        deallocate(x)
-       end
+       end program
+!
+! Subroutine to dump temperature profile to a file
+! Makes a CSV-format file that can be read easily by gnuplot.
+!
+       subroutine temperature2csv(x,t,n,fname)
+       real, dimension(n) :: x, t
+       character          :: fname
+       integer            :: i
+       open(11,file=fname)
+       write(11,*) 'x,temperature'
+       do i=1, n
+           write(11,*) x(i),',',t(i)
+       end do
+       close(11)
+       end subroutine
