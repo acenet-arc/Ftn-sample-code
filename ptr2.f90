@@ -4,6 +4,7 @@ program pointer_example
     real, pointer :: pa   
     integer, pointer :: pb(:)     
     integer, pointer :: pc(:,:) 
+    integer          :: shape_c(2)
     
     real, target :: a = 10.0
     integer, target :: b2d(9,10)
@@ -21,4 +22,17 @@ program pointer_example
     pb => b2d(6:9,4)       !pb=63,73,83,93
     pc => b2d(6:8,6:8)     !65,66,…
     pc = 1
+
+    write(*,*) 'pa: ',pa
+    write(*,*) 'pb: ',pb
+    shape_c = shape(pc)
+    write(*,*) 'shape(pc): ',shape_c
+    write(*,*) 'pc: '
+    do i=1,shape_c(1)
+        write(*,*) (pc(i,j),j=1,shape_c(2))
+    end do
+    write(*,*) 'b2d:'
+    do i=1,9
+        write(*,*) (b2d(i,j),j=1,10)
+    end do
 end program
