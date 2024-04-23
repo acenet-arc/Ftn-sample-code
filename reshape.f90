@@ -1,13 +1,13 @@
 program arrayReshape
 implicit none
 
-real, dimension (9)  :: a = (/ 21, 22, 23, 24, 25, 26, 27, 28, 29 /)
+real, dimension (9)  :: a = [ 11, 12, 13, 21, 22, 23, 31, 32, 33 ]
 real, dimension (1:3, 1:3) :: b
-integer :: i, j
+integer :: i
 
-b = reshape( a, (/3, 3/) )
+b = reshape( a, [3, 3] )
 
 do i = 1,3
-   write(*,*) (b(i,j), j=1,3)
+   write(*,*) b(i,1), b(i,2), b(i,3)
 end do
 end program
