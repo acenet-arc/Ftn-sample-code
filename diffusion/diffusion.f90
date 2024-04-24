@@ -110,7 +110,7 @@ end program
 !
 subroutine temperature2csv(x,t,n,fname)
     real, dimension(n) :: x, t
-    character          :: fname
+    character(len=*)   :: fname
     integer            :: i
     open(11,file=fname)
     write(11,*) 'x,temperature'
