@@ -1,0 +1,4 @@
+&myparams
+grid_init_value=20.0
+grid_name="My Grid"
+/
