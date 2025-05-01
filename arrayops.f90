@@ -2,7 +2,7 @@
 program arrayops
 
 real :: a(5) = [2., 4., 6., 8., 10.]
-real :: b(5) = [1., 3., 5., 7., 9.]
+real :: b(5) = (/1., 3., 5., 7., 9./) ! older notation
 real :: c(5)
 
 c = 1.         ! distribute scalar to each element
