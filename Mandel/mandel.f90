@@ -55,8 +55,9 @@ if (command_argument_count() == 2) then
     call get_command_argument(2, cmd_line_arg)
     read(cmd_line_arg,'(i6)') y_resolution
 end if
-write(*,*) 'Resolution: ',x_resolution,' X ',y_resolution
 allocate(image(x_resolution,y_resolution))
+write(*,*) xmin,xmax,ymin,ymax
+write(*,*) x_resolution,y_resolution
 
 do i = 1, x_resolution
     do j = 1, y_resolution 
