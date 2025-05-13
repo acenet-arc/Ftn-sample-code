@@ -40,24 +40,18 @@ program mandel
 
 use mandelbrot
 implicit none
-double precision,parameter :: xmin=-2.d0,xmax=1.d0
-double precision,parameter :: ymin=-1.d0,ymax=1.d0
-character(len=5) :: cmd_line_arg
-integer:: x_resolution=30, y_resolution=20
+double precision :: xmin, xmax, ymin, ymax
+integer:: x_resolution, y_resolution
 integer,allocatable :: image(:,:)
 integer :: i, j
 double precision :: x, y
 character(10) :: linefmt
 
-if (command_argument_count() == 2) then 
-    call get_command_argument(1, cmd_line_arg)
-    read(cmd_line_arg,'(i6)') x_resolution
-    call get_command_argument(2, cmd_line_arg)
-    read(cmd_line_arg,'(i6)') y_resolution
-end if
+read(*,*) xmin, xmax, ymin, ymax
+read(*,*) x_resolution, y_resolution
 allocate(image(x_resolution,y_resolution))
-write(*,*) xmin,xmax,ymin,ymax
-write(*,*) x_resolution,y_resolution
+write(*,*) xmin, xmax, ymin, ymax
+write(*,*) x_resolution, y_resolution
 
 do i = 1, x_resolution
     do j = 1, y_resolution 
