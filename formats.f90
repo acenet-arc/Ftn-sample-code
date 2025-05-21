@@ -1,8 +1,9 @@
-program print_demo
+program read_demo
 implicit none
-real, parameter :: a = 1.0, b=-10.0
-integer, parameter :: i = 272, j = -314159
-print *, 'Hello world'
+real :: a, b
+integer :: i, j
+print *, 'Enter two floating point numbers and two integers, please:'
+read *, a, b, i, j
 print *, a, b
 print 100, a, b
 100 format(2F6.1)
