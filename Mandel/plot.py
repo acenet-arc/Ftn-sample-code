@@ -3,6 +3,7 @@
 
 import numpy as np
 import matplotlib
+import sys
 #matplotlib.use('Agg')
 matplotlib.use('TkAgg')
 
@@ -10,10 +11,9 @@ import matplotlib.pyplot as plt
 
 settings={
   "colormap":"nipy_spectral",
-  "inputFileName":"set.txt",
 }
 
-file=open(settings["inputFileName"],"r")
+file = sys.stdin # or could use sys.argv to check for a filename argument, meh...
 
 line=file.readline()
 lineSplit=line.split()
