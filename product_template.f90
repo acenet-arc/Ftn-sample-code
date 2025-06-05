@@ -6,8 +6,8 @@ real :: x, y
 open(1, file=...........,  status= .....)
 open(2, file=............, status= .....)
 do .....
-   read(....)  ....
-   write(....) ......
+   read(....)  x, y
+   write(....) x, y, x*y
 end do
 close(1)
 close(2)
