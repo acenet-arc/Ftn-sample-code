@@ -1,10 +1,10 @@
 program main
-integer, parameter :: r15 = selected_real_kind(15, 50)
-real (kind=r15) :: a = 1./3.
+integer, parameter :: r20 = selected_real_kind(20, 100)
+real * 4        :: a = 1./3.
 real * 8        :: b = 1./3.
-real * 4        :: c = 1./3.
-print *, 'value                   precision'
-print *, a, precision(a)
-print *, b, precision(b)
-print *, c, precision(c)
+real (kind=r20) :: c = 1./3.
+print *, '  precision                  size  value'
+print *, precision(a), sizeof(a), a
+print *, precision(b), sizeof(b), b
+print *, precision(c), sizeof(c), c
 end program
